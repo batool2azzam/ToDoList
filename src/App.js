@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import ToDoList from './Components/ToDoList';
+import React from 'react';
+import ToDosProvider from "./Contexts/ToDosContext";
+import { ToastProvider } from './Contexts/ToastContext';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+export default function App() {
+
+  
+
+//   const initialToDos=[
+//     {
+//         id:uuidv4(),
+//         title:"المهمة الاولى",
+//         body:"تةنهتهنتهناىاىهخاىتخىختىاخت",
+//         completed:false
+//     },
+//     {
+//         id:uuidv4(),
+//         title:"المهمة 2",
+//         body:"تةنهتهنتهناىاىهخاىتخىختىاخت",
+//         completed:false
+//     },
+//     {
+//         id:uuidv4(),
+//         title:"المهمة 3",
+//         body:"تةنهتهنتهناىاىهخاىتخىختىاخت",
+//         completed:false
+//     }
+// ];
+  
+return (
+    <>
+      <div className='App'>
+        <ToDosProvider>
+          <ToastProvider >
+          <ToDoList/>
+          </ToastProvider>
+        </ToDosProvider>
+        
+      </div>
+    </>
   );
 }
-
-export default App;
